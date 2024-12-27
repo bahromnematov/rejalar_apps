@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rejalar_apps/pages/home_page.dart';
+import 'package:rejalar_apps/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade500),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   intl: ^0.20.0
   shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.2.2
+  image_compare_slider: ^2.8.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rejalar_apps/models/reja_modeli.dart';
+import 'package:rejalar_apps/service/secure_storage.dart';
 import 'package:rejalar_apps/service/shared_preference.dart';
 
 import '../widgets/reja_qushish.dart';
@@ -86,16 +87,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    SharedPreference.storeName("JAsur");
-    RejaModeli2 model1 =
-    RejaModeli2(name: "Bozorga Borish", kuni: "DateTime.now()", id: "id1");
-    SharedPreference.storeReja(model1);
-    SharedPreference.loadReja().then((value) => {
-          print(value?.toJson().toString()),
-        });
-    SharedPreference.removeReja().then((value) => {
-      print(value)
-    });
+    SecureStorage.storeApiKey("qwerty123");
+    SecureStorage.loadApiKey().then((value) => {print(value.toString())});
+    SecureStorage.removeApiKey().then((value) => {});
   }
 
   @override
