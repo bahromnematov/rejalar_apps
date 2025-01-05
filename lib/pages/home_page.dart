@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rejalar_apps/models/reja_modeli.dart';
-import 'package:rejalar_apps/service/secure_storage.dart';
-import 'package:rejalar_apps/service/shared_preference.dart';
+import 'package:rejalar_apps/models/user.dart';
+import 'package:rejalar_apps/service/hive_storage.dart';
 
 import '../widgets/reja_qushish.dart';
 import '../widgets/rejalar_malumoti.dart';
@@ -87,9 +87,17 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    SecureStorage.storeApiKey("qwerty123");
-    SecureStorage.loadApiKey().then((value) => {print(value.toString())});
-    SecureStorage.removeApiKey().then((value) => {});
+    User user = User("id", "email", "password");
+    User user2 = User("id2", "email2", "password2");
+    User user3 = User("id3", "email3", "password3");
+    HiveStorage.storeReja(user);
+    HiveStorage.storeReja(user2);
+    HiveStorage.storeReja(user3);
+    var userreja = HiveStorage.loadReja();
+    var userreja2 = HiveStorage.loadReja();
+    print(userreja?.toJson());
+    print(userreja2?.toJson());
+    print(HiveStorage.box.get("reja")?.toJson());
   }
 
   @override

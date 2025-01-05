@@ -11,11 +11,7 @@ class RejaModeli {
         kuni = json['kuni'],
         id = json['id'];
 
-  Map<String,dynamic> toJson()=>{
-    'name':name,
-    'kuni':kuni,
-    'id':id
-  };
+  Map<String, dynamic> toJson() => {'name': name, 'kuni': kuni, 'id': id};
 
   void bajarilganReja() {
     bajarildi = !bajarildi;
@@ -35,13 +31,7 @@ class RejaModeli2 {
         kuni = json['kuni'],
         id = json['id'];
 
-  Map<String,dynamic> toJson()=>{
-    'name':name,
-    'kuni':kuni,
-    'id':id
-  };
-
-
+  Map<String, dynamic> toJson() => {'name': name, 'kuni': kuni, 'id': id};
 }
 
 class Rejalar {
